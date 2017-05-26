@@ -3,7 +3,6 @@ FROM jupyter/minimal-notebook:latest
 # XGBOOST and MINICONDA3
 ADD environment.yml /tmp/environment.yml
 ADD requirements.txt /tmp/requirements.txt
-ADD run.sh $HOME/run.sh
 USER root
 RUN cd /opt && git clone --recursive https://github.com/dmlc/xgboost && \
     cd xgboost && make -j`nproc` && \
